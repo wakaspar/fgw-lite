@@ -1,0 +1,189 @@
+<!-- BG Holder One -->
+<div id="home" class="bg-holder"></div>
+
+<!-- // Pinball Box // -->
+<div id="pins" class="ui section content-box">
+  <h1 class="section-header">pinball & video arcade.</h1>
+  <br>
+  <div class="pin-box">
+    <ul class="pin-list">
+    <% @pins.each do |pin| %>
+      <li> <%= link_to pin['name'], pin['ipdb_link'], target: '_blank' %> </li>
+    <% end %>
+    </ul>
+  </div>
+  <br>
+  <div class="ui right aligned grid">
+    <p class="column box-bottom-text"><i class="game icon"></i>all ages welcome.  games updated daily!</p>
+  </div>
+</div> <!-- closes Pinball Box -->
+
+<!-- BG Holder Two -->
+<div id="bg-two" class="bg-holder"></div>
+
+<!-- // Print Order Box // -->
+<div id="prints" class= "ui section content-box">
+  <h1 class="section-header">custom screen printing.</h1>
+  <p class="row" style="padding-left:4%;"> <i class="asterisk icon"></i>We specialize in small batches of up to four colors, as well as</p>
+
+  <br>
+  <div class="print-order-info">
+    <div class="ui center aligned three column stackable grid">
+      <div class="column">
+        <h2 class="ui icon header">
+          <i class="ui circular inverted exchange icon"></i>
+          <div class="content">Low minimums / fast turnaround</div>
+        </h2>
+      </div>
+      <div class="column">
+        <h2 class="ui icon header">
+          <i class="ui circular inverted tint icon"></i>
+          <div class="content">Spot color, 4 color process, waterbase inks</div>
+        </h2>
+      </div>
+      <div class="column">
+        <h2 class="ui icon header">
+          <i class="ui circular inverted tags icon"></i>
+          <div class="content"><a href="https://www.alphabroder.com/" target="_blank">Visit our available garmet catalog</a></div>
+        </h2>
+      </div>
+      <div class="row">
+        <button class="ui massive secondary labeled icon button new-print-btn"> <i class="add circle icon" style="color:#ffffff;"></i> new print order</button>
+      </div>
+    </div>
+  </div> <!-- closes print-order-info -->
+  <div class="print-order-form">
+    <%= render partial: 'home/new_print' %>
+  </div>
+</div>
+
+<!-- BG Holder Three -->
+<div id="bg-three" class="bg-holder"></div>
+
+<!-- // Parties Box // -->
+<div id="parties" class= "ui section content-box">
+
+  <h1 class="section-header">party & event hosting.</h1>
+  <!-- TODO: SMELLY! -->
+  <p style="padding-left:4%;"><i class="asterisk icon"></i>We proudly host public or private functions, including</p>
+  <br>
+
+  <div class="ui center aligned three column stackable grid">
+    <div class="column">
+      <h2 class="ui icon header">
+        <i class="ui circular inverted birthday icon hoverable-i"></i>
+        <div class="content">birthday parties</div>
+        <div class="sub header">for children and adults</div>
+      </h2>
+    </div>
+
+    <div class="column">
+      <h2 class="ui icon header">
+        <i class="ui circular inverted building icon"></i>
+        <div class="content">corporate & office parties</div>
+      </h2>
+    </div>
+
+    <div class="column">
+      <h2 class="ui icon header">
+        <i class="ui circular inverted tint icon"></i>
+        <div class="content">screen printing workshops</div>
+      </h2>
+    </div>
+  </div>
+  <div class="ui divider"></div>
+
+  <p class="row" style="padding-left:4%;"> <i class="info circle icon"></i> Contact the shop via:</p>
+  <div class="ui center aligned three column stackable grid">
+    <!-- Call Button -->
+    <div class="column">
+      <a href="tel:1-415-876-4444"></a>
+      <button class="ui massive secondary labeled icon button">
+        <i class="phone icon" style="color:#ffffff;"></i>
+        phone
+      </button>
+    </div>
+    <h1>or</h1>
+    <div class="column">
+      <a href="mailto:info@freegoldwatch.com">
+        <button class="ui massive secondary labeled icon button">
+          <i class="envelope icon" style="color:#ffffff;"></i>
+          email
+        </button>
+      </a>
+    </div>
+    <p class="centered five column row">...for more infomation or to ask about availabilty!</p>
+  </div>
+</div>
+
+<!-- BG Holder Four -->
+<div id="bg-four" class="bg-holder"></div>
+
+<!-- // Social Media Box // -->
+<div id="social" class="ui section content-box">
+  <h1 class="section-header">social media.</h1>
+  <br>
+  <!-- Social Media Content - Instagram & Facebook Feeds -->
+  <div class="ui center aligned three column stackable grid container">
+
+    <div class="column six wide">
+      <!-- Instagram Feed  - SFPins Account -->
+      <p><%= fa_icon "instagram 4x", class: 'ui image' %><span style="font-family:'serif';"> @</span>sfpins</p>
+      <div class="ui row tiny images">
+        <% @instagram.each do |instagram| %>
+        <%= link_to "#{instagram.images.standard_resolution.url}" do %>
+        <%= image_tag instagram.images.thumbnail.url, class: "ui image" %>
+        <% end %>
+        <% end %>
+      </div>
+
+      <!-- Instagram Feed  - FGW Account -->
+      <p><%= fa_icon "instagram 4x", class: 'ui image' %><span style="font-family:'serif';"> @</span>freegoldwatch</p>
+      <div class="ui row tiny images">
+        <% @instagram.each do |instagram| %>
+        <%= link_to "#{instagram.images.standard_resolution.url}" do %>
+        <%= image_tag instagram.images.thumbnail.url, class: "ui image" %>
+        <% end %>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="column six wide">
+      <!-- Twitter Feed -->
+      <p><%= fa_icon "twitter 4x", class: 'ui image' %><span style="font-family:'serif';">#</span>freegoldwatchUS</p>
+      <div class="ui row tiny images">
+        <% @instagram.each do |instagram| %>
+        <%= link_to "#{instagram.images.standard_resolution.url}" do %>
+          <%= image_tag instagram.images.thumbnail.url, class: "ui image" %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <!-- Facebook Feed -->
+      <p><%= fa_icon "facebook 4x", class: 'ui image' %> /freegoldwatchshop</p>
+      <div class="ui row tiny images">
+        <% @instagram.each do |instagram| %>
+        <%= link_to "#{instagram.images.standard_resolution.url}" do %>
+          <%= image_tag instagram.images.thumbnail.url, class: "ui image" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- SFPD Badge -->
+    <div class="four wide column">
+      <%= link_to 'http://sfpins.org', target: '_blank' do %>
+        <%= image_tag('sfpd_b&w small', class: "sfpd_logo ui centered image") %>
+          <button class="ui big secondary labeled icon button">
+            <i class="linkify icon" style="color:#ffffff;"></i>
+            league.
+          </button>
+      <% end %>
+    </div>
+  </div>
+
+</div> <!-- closes Social Box -->
+
+<!-- BG Holder Four -->
+<div id="bg-five" class="bg-holder"></div>
