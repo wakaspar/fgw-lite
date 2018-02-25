@@ -2,16 +2,20 @@
 <html ng-app="FreeGoldAngular">
 
   <head>
-
-    <link rel="stylesheet" href="main.css">
-
+    <!-- jQuery / Angular CDNs -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 
     <script src="app.js"></script>
     <script src="controllers/ShopController.js"></script>
+
+    <!-- Semantic UI CDNs -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.0/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.0/dist/components/dropdown.min.js"></script>
+
 
     <meta charset="utf-8">
     <title>FGW | Angular</title>
@@ -77,18 +81,10 @@
                   <i class="envelope green icon"></i>
                   info@freegoldwatch.com
                 </div>
-
-                <!-- <div class="header">
-                </div>
-                <div class="header">
-                </div> -->
               </div>
             </div>
-
-
           </div> <!-- closes Nav -->
         </div>  <!-- closes 'ui text menu' -->
-        <div class=""></div>
       </div>  <!-- closes logo-box -->
     </header>
 
@@ -97,19 +93,18 @@
     <!-- Page Footer -->
     <footer id="foot">
       <div class="foot-cap"></div>
-
       <div class="content-box">
         <div class="ui center aligned stackable grid">
           <div class="row">
             <div class="five wide computer seven wide tablet column">
               <a href="https://www.google.com/maps/place/Free+Gold+Watch/@37.7682011,-122.4549127,17z/data=!4m5!3m4!1s0x80858751638705a1:0xc5438abd8814e010!8m2!3d37.7682011!4d-122.452724" target="_blank">
-                <%= image_tag('new_map', class: 'ui image') %>
+                <img src="images/new_map.png" class="ui image">
                 <p><i class="home icon"></i> 1767 Waller St. SF, Ca. 94117</p>
               </a>
             </div>
             <div class="six wide computer one wide tablet column"></div>
             <div class="five wide computer seven wide tablet column">
-              <%= image_tag('hours', class: 'ui centered image') %>
+              <img src="images/hours.gif" class="ui image">
               <a href="mailto:info@freegoldwatch.com">
                 <p><i class="envelope icon"></i>info@freegoldwatch.com</p>
               </a>
@@ -131,7 +126,7 @@
               <%= link_to 'https://twitter.com/freegoldwatchus', target: '_blank' do %>
                 <%= fa_icon "twitter-square 3x" %>
               <% end %>
-              <p>copyright<i class="copyright icon"></i>2018 | freegoldwatch.</p>
+              <p>copyright <i class="copyright icon"></i>2018 | freegoldwatch.</p>
             </div>
             <div class="three wide column"></div>
           </div>
