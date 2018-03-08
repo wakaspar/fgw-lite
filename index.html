@@ -2,23 +2,24 @@
 <html ng-app="FreeGoldAngular">
 
   <head>
-    <!-- jQuery / Angular CDNs -->
+    <!-- jQuery & Angular CDNs -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 
-    <script src="app.js"></script>
+    <!-- Locally Hosted Files -->
+    <link rel="stylesheet" href="main.css">
+    <script src="javascript/ui.js"></script>
+    <script src="javascript/app.js"></script>
     <script src="controllers/ShopController.js"></script>
 
-    <!-- Semantic UI CDNs -->
-    <link rel="stylesheet" href="main.css">
+    <!-- External Fonts & Semantic UI CDNs -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.0/dist/semantic.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.0/dist/components/dropdown.min.js"></script>
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.0/dist/semantic.min.js"></script>
 
     <meta charset="utf-8">
-    <title>FGW | Angular</title>
+    <title>FGW | 3.0</title>
   </head>
 
   <body>
@@ -53,7 +54,7 @@
                 </div>
                 <div class="ui divider"></div>
                 <div id="pins-link" class="left aligned item">
-                  <i class="bomb icon"></i>
+                  <i class="circle icon"></i>
                   pinball arcade.
                 </div>
 
@@ -70,7 +71,7 @@
                 </div>
                 <div class="ui divider"></div>
                 <div class="header foot-link">
-                  <i class="home red icon"></i>
+                  <i class="map red icon"></i>
                   1767 Waller St. SF, CA 94117
                 </div>
                 <div class="header foot-link">
@@ -88,7 +89,212 @@
       </div>  <!-- closes logo-box -->
     </header>
 
-    <main ng-view></main>
+    <!-- BG Holder One -->
+    <div id="home" class="bg-holder"></div>
+
+    <!-- // Pinball Box // -->
+    <div id="pins" class="ui section content-box">
+      <h1 class="section-header">pinball & video arcade.</h1>
+      <br>
+      <div class="pin-box">
+        <ul class="pin-list"></ul>
+      </div>
+      <br>
+      <div class="ui right aligned grid">
+        <p class="column box-bottom-text"><i class="game icon"></i>all ages welcome.  games updated daily!</p>
+      </div>
+    </div> <!-- closes Pinball Box -->
+
+    <!-- BG Holder Two -->
+    <div id="bg-two" class="bg-holder"></div>
+
+    <!-- // Print Order Box // -->
+    <div id="prints" class= "ui section content-box">
+      <h1 class="section-header">custom screen printing.</h1>
+      <p class="row" style="padding-left:4%;"> <i class="asterisk icon"></i>We specialize in small batches of up to four colors</p>
+
+      <br>
+      <div class="print-info">
+        <div class="ui center aligned three column stackable grid">
+          <div class="column">
+            <h2 class="ui icon header">
+              <i class="ui circular inverted history icon"></i>
+              <div class="content">Low minimums / fast turnaround</div>
+            </h2>
+          </div>
+          <div class="column">
+            <h2 class="ui icon header">
+              <i class="ui circular inverted tint icon"></i>
+              <div class="content">Spot color, 4 color process, waterbase inks</div>
+            </h2>
+          </div>
+          <div class="column">
+            <h2 class="ui icon header">
+              <a href="https://www.alphabroder.com/" target="_blank"><i class="ui circular inverted external link alternate icon"></i>
+              <div class="content">Visit our available garmet catalog</div></a>
+            </h2>
+          </div>
+          <div class="row">
+            <button class="ui massive secondary labeled icon button new-print-btn"> <i class="add circle icon" style="color:#ffffff;"></i> new print order</button>
+          </div>
+        </div>
+      </div> <!-- closes print-order-info -->
+      <div class="print-order-form">
+        <form class="" action="index.html" method="post">
+          <div class="form-wrapper">
+            <h5 class="ui dividing header">Please complete the form below - don't forget to include your art:</h5>
+            <div class="ui equal width large form">
+              <div class="fields">
+                <div class="field">
+                  <label for="name">Client Name</label>
+                  <input type="text" name="name" placeholder="Bob Loblaw">
+                </div>
+                <div class="field three wide">
+                  <label for="name">Quantity</label>
+                  <input type="number" name="quantity" placeholder="12">
+                </div>
+              </div>
+              <div class="fields">
+                <div class="field">
+                  <label for="name">Contact Email</label>
+                  <input type="text" name="contact-email" placeholder="Bob@Loblaw.com">
+                </div>
+                <div class="field">
+                  <label for="name">Contact Phone</label>
+                  <input type="text" name="contact-phone" placeholder="415-555-5555">
+                  <input type="hidden" name="order-state" value="0">
+                </div>
+                <div class="field">
+                  <label for="upload-art">Upload your art</label>
+                  <input type="file" name="upload-art">
+                </div>
+              </div>
+              <input type="button" name="submit" value="Submit" class="ui secondary big button">
+              <input type="button" value="Go Back" class="back-btn ui secondary big button">
+            </div>
+            <br>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- BG Holder Three -->
+    <div id="bg-three" class="bg-holder"></div>
+
+    <!-- // Parties Box // -->
+    <div id="parties" class= "ui section content-box">
+
+      <h1 class="section-header">party & event hosting.</h1>
+      <!-- TODO: SMELLY! -->
+      <p style="padding-left:4%;"><i class="asterisk icon"></i>We proudly host public or private functions, including</p>
+      <br>
+
+      <div class="ui center aligned three column stackable grid">
+        <div class="column">
+          <h2 class="ui icon header">
+            <i class="ui circular inverted birthday icon hoverable-i"></i>
+            <div class="content">birthday parties</div>
+            <div class="sub header">for children and adults</div>
+          </h2>
+        </div>
+
+        <div class="column">
+          <h2 class="ui icon header">
+            <i class="ui circular inverted building icon"></i>
+            <div class="content">corporate & office parties</div>
+          </h2>
+        </div>
+
+        <div class="column">
+          <h2 class="ui icon header">
+            <i class="ui circular inverted tint icon"></i>
+            <div class="content">screen printing workshops</div>
+          </h2>
+        </div>
+      </div>
+      <div class="ui divider"></div>
+
+      <p class="row" style="padding-left:4%;"> <i class="info circle icon"></i> Contact the shop via:</p>
+      <div class="ui center aligned three column stackable grid">
+        <!-- Call Button -->
+        <div class="column">
+          <a href="tel:1-415-876-4444"></a>
+          <button class="ui massive secondary labeled icon button">
+            <i class="phone icon" style="color:#ffffff;"></i>
+            phone
+          </button>
+        </div>
+        <h1>or</h1>
+        <div class="column">
+          <a href="mailto:info@freegoldwatch.com">
+            <button class="ui massive secondary labeled icon button">
+              <i class="envelope icon" style="color:#ffffff;"></i>
+              email
+            </button>
+          </a>
+        </div>
+        <p class="centered five column row">...for more infomation or to ask about availabilty!</p>
+      </div>
+    </div>
+
+    <!-- BG Holder Four -->
+    <div id="bg-four" class="bg-holder"></div>
+
+    <!-- // Social Media Box // -->
+    <div id="social" class="ui section content-box">
+      <h1 class="section-header">social media.</h1>
+      <br>
+      <!-- Social Media Content - Instagram & Facebook Feeds -->
+      <div class="ui center aligned three column stackable grid container">
+
+        <div class="column six wide">
+          <!-- Instagram Feed  - SFPins Account -->
+          <p><i class="instagram icon big"></i><span style="font-family:'serif';"> @</span>sfpins</p>
+          <div class="social-box ui row tiny images">
+            <!-- <% @instagram.each do |instagram| %>
+            <%= link_to "#{instagram.images.standard_resolution.url}" do %>
+            <%= image_tag instagram.images.thumbnail.url, class: "ui image" %>
+            <% end %>
+            <% end %> -->
+          </div>
+
+          <!-- Instagram Feed  - FGW Account -->
+          <p><i class="instagram icon big"></i><span style="font-family:'serif';"> @</span>freegoldwatch</p>
+          <div class="ui row tiny images">
+
+          </div>
+
+        </div>
+
+        <div class="column six wide">
+          <!-- Twitter Feed -->
+          <p><i class="twitter icon big"></i><span style="font-family:'serif';">#</span>freegoldwatchUS</p>
+          <div class="ui row tiny images">
+
+          </div>
+
+          <!-- Facebook Feed -->
+          <p><i class="facebook icon big"></i> /freegoldwatchshop</p>
+          <div class="ui row tiny images">
+
+          </div>
+        </div>
+
+        <!-- SFPD Badge -->
+        <div class="four wide column">
+            <a href="http://sfpins.org" target="_blank">
+              <img src="images/league_sm.gif" alt="SFPD Pinball League" class="sfpd_logo ui centered image">
+              <button class="ui big secondary labeled icon button">
+                <i class="linkify icon" style="color:#ffffff;"></i>
+                league.
+              </button>
+            </a>
+        </div>
+      </div>
+    </div> <!-- closes Social Box -->
+
+    <!-- BG Holder Four -->
+    <div id="bg-five" class="bg-holder"></div>
 
     <!-- Page Footer -->
     <footer id="foot">
@@ -99,12 +305,12 @@
             <div class="five wide computer seven wide tablet column">
               <a href="https://www.google.com/maps/place/Free+Gold+Watch/@37.7682011,-122.4549127,17z/data=!4m5!3m4!1s0x80858751638705a1:0xc5438abd8814e010!8m2!3d37.7682011!4d-122.452724" target="_blank">
                 <img src="images/new_map.png" class="ui image">
-                <p><i class="home icon"></i> 1767 Waller St. SF, Ca. 94117</p>
+                <p><i class="map pin icon"></i> 1767 Waller St. SF, Ca. 94117</p>
               </a>
             </div>
             <div class="six wide computer one wide tablet column"></div>
             <div class="five wide computer seven wide tablet column">
-              <img src="images/hours.gif" class="ui image">
+              <img src="images/hours.gif" class="ui ">
               <a href="mailto:info@freegoldwatch.com">
                 <p><i class="envelope icon"></i>info@freegoldwatch.com</p>
               </a>
@@ -117,15 +323,15 @@
           <div class="row">
             <div class="three wide column"></div>
             <div class="ten wide column">
-              <%= link_to 'https://www.facebook.com/FreeGoldWatchShop/', target: '_blank' do %>
-                <%= fa_icon "facebook-square 3x" %>
-              <% end %>
-              <%= link_to 'https://www.instagram.com/freegoldwatch/', target: '_blank' do %>
-                <%= fa_icon "instagram 3x" %>
-              <% end %>
-              <%= link_to 'https://twitter.com/freegoldwatchus', target: '_blank' do %>
-                <%= fa_icon "twitter-square 3x" %>
-              <% end %>
+              <a href="https://www.facebook.com/FreeGoldWatchShop/" target="_blank">
+                <i class="facebook icon big"></i>
+              </a>
+              <a href="https://www.instagram.com/freegoldwatch/" target="_blank">
+                <i class="instagram icon big"></i>
+              </a>
+              <a href="https://twitter.com/freegoldwatchus" target="_blank">
+                <i class="twitter square icon big"></i>
+              </a>
               <p>copyright <i class="copyright icon"></i>2018 | freegoldwatch.</p>
             </div>
             <div class="three wide column"></div>

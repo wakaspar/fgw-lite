@@ -1,4 +1,4 @@
-angular
+var app = angular
   .module('FreeGoldAngular', ['ngRoute'])
   .config(config);
 
@@ -18,3 +18,11 @@ function config($routeProvider, $locationProvider){
     requireBase: false
   });
 }
+
+app.directive('new-print-form', function(){
+  return {
+    restrict: 'E',
+    replace: true,
+    templateUrl: 'templates/form.html'
+  }
+})

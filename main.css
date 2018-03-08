@@ -13,15 +13,21 @@
 }
 
 .psa, .content, .section-header,
-.tagline, .box-bottom-text {
+.tagline, .tagline p, .box-bottom-text {
   font-family: 'helsinkiregular';
-  /*-webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;*/
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
   color: #161616;
 }
 
-a, i {
+i {
+  text-decoration: none;
   color: #161616;
+}
+
+a {
+  text-decoration: none;
+  color: purple;
 }
 
 .content-box {
@@ -32,17 +38,7 @@ a, i {
   background: #161616;
 }
 
-p {
-  font-size: 1.2em;
-}
 
-
-
-
-
-.tagline p {
-  font-size: 3.5vw;
-}
 
 .section-header {
   padding-left: 2%;
@@ -80,6 +76,7 @@ header {
 }
 
 .tagline p {
+  font-size: 3.5vw;
   text-align: center;
   color: #ffffff;
 }
@@ -87,9 +84,8 @@ header {
   width: 30vw;
 }
 
-.burger.menu.item {
+.dropdown .item {
   width: inherit;
-  font-size: 1.5em;
 }
 
 .logo-box {
@@ -105,11 +101,6 @@ header {
 .ui.text.menu, .full-name, .initials {
   margin: 0em;
 }
-
-
-
-
-
 
 
 
@@ -176,19 +167,13 @@ header {
   .full-name {
     display: none;
   }
-  .burger.menu {
-    width: 50vw;
-  }
-  .burger.menu.item {
-    width: inherit;
-    font-size: 1.5em;
-  }
 }
 
 
 
 
 .pin-list {
+  list-style: none;
   -moz-column-count: 4;
   -moz-column-gap: 20px;
   -webkit-column-count: 4;
@@ -206,6 +191,15 @@ header {
   text-decoration: none;
 }
 
+
+.print-info a {
+  font-family: 'helsinkiregular';
+  color: #161616;
+}
+
+.print-info a:hover {
+  color: 545454;
+}
 
 .print-order-form {
   display: none;
@@ -229,6 +223,10 @@ footer.foot-cap {
 footer {
   background-color: #777777;
 }
+footer a {
+  color: #161616;
+}
+
 footer i:hover, footer a:hover {
   color: #545454;
 }
